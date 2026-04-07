@@ -1,4 +1,6 @@
-package main.gui;
+from pathlib import Path
+path = Path(r'c:\Users\abc\Desktop\DF\CloudScheduler\src\main\gui\MainFrame.java')
+content = '''package main.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -137,22 +139,14 @@ public class MainFrame extends JFrame {
         if (chooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();
             try (FileWriter writer = new FileWriter(file)) {
-                writer.write("Metric,Value
-");
-                writer.write("FCFS Makespan," + lastResult.fcfsMakespan + "
-");
-                writer.write("GA Makespan," + lastResult.gaMakespan + "
-");
-                writer.write("Improvement (%)," + String.format("%.2f", lastResult.improvementPercent) + "
-");
-                writer.write("Execution Time (ms)," + lastResult.executionMs + "
-
-");
-                writer.write("Task,VM
-");
+                writer.write("Metric,Value\n");
+                writer.write("FCFS Makespan," + lastResult.fcfsMakespan + "\n");
+                writer.write("GA Makespan," + lastResult.gaMakespan + "\n");
+                writer.write("Improvement (%)," + String.format("%.2f", lastResult.improvementPercent) + "\n");
+                writer.write("Execution Time (ms)," + lastResult.executionMs + "\n\n");
+                writer.write("Task,VM\n");
                 for (Task task : lastTasks) {
-                    writer.write("Task " + task.id + ",VM " + lastResult.bestSolution.allocation[task.id] + "
-");
+                    writer.write("Task " + task.id + ",VM " + lastResult.bestSolution.allocation[task.id] + "\n");
                 }
                 JOptionPane.showMessageDialog(this, "Schedule exported to " + file.getAbsolutePath(), "Export Complete", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception ex) {
@@ -161,3 +155,6 @@ public class MainFrame extends JFrame {
         }
     }
 }
+'''
+path.write_text(content, encoding='utf-8')
+print('MainFrame rewritten')

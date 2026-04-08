@@ -1,36 +1,32 @@
-# Cloud Task Scheduling using Genetic Algorithm (EA)
+# Cloud Task Scheduling using Genetic Algorithm
 
 ## Overview
 
-This project implements Cloud Task Scheduling using an Evolutionary Algorithm (Genetic Algorithm) to optimize the allocation of tasks across Virtual Machines (VMs).
+This project implements an optimized cloud task scheduling system using a Genetic Algorithm (GA). The system assigns tasks to virtual machines (VMs) in a way that minimizes execution time (makespan) and improves resource utilization. It also compares the performance of GA with the traditional First Come First Serve (FCFS) scheduling algorithm.
 
-The goal is to minimize:
-
-* Makespan (total execution time)
-* Load imbalance
-* Resource utilization cost
+The application includes a graphical user interface (GUI) built using Java Swing, along with visualization features such as performance graphs and Gantt charts.
 
 ---
 
 ## Features
 
-* Genetic Algorithm based optimization
-* Task to VM allocation system
-* Fitness evaluation (Makespan minimization)
-* Modular Java architecture
-* Scalable design
-* Easy to extend with GUI
+* Genetic Algorithm based task scheduling
+* FCFS scheduling for comparison
+* Makespan optimization
+* Graph visualization (Generations vs Makespan)
+* Gantt chart for task allocation
+* Dark-themed dashboard UI
+* Input validation and error handling
+* CSV export functionality
 
 ---
 
-## How It Works
+## Technologies Used
 
-1. Initialize population (random task allocation)
-2. Evaluate fitness (based on makespan)
-3. Select best chromosomes
-4. Apply crossover and mutation
-5. Generate new population
-6. Repeat until optimal solution is found
+* Java (Core Java)
+* Java Swing (GUI)
+* Object-Oriented Programming
+* Genetic Algorithm
 
 ---
 
@@ -39,122 +35,122 @@ The goal is to minimize:
 ```
 CloudScheduler/
 │
-├── src/main/
-│   ├── model/        # Task, VM, Chromosome
-│   ├── algorithm/    # Genetic Algorithm logic
-│   ├── service/      # Scheduler service
-│   ├── utils/        # Fitness calculation
-│   └── gui/          # GUI components (optional)
+├── src/
+│   ├── main/
+│   │   ├── App.java
+│   │   ├── model/
+│   │   ├── algorithm/
+│   │   ├── service/
+│   │   ├── utils/
+│   │   └── gui/
 │
-├── data/             # Sample input
-└── README.md
+├── data/
+├── README.md
 ```
 
 ---
 
-## Technologies Used
+## How It Works
 
-* Java
-* Object-Oriented Programming (OOP)
-* Genetic Algorithm (Evolutionary Computing)
+1. User provides:
 
----
+   * Number of tasks
+   * Number of virtual machines
+   * Execution time of tasks
 
-## Installation
+2. The system:
 
-1. Clone the repository:
+   * Runs FCFS scheduling
+   * Runs Genetic Algorithm optimization
 
-```
-git clone https://github.com/sanjayverma010/GA-Based-Cloud-Task-Scheduling.git
-```
+3. Output:
 
-2. Navigate to the project directory:
-
-```
-cd GA-Based-Cloud-Task-Scheduling
-```
-
-3. Open the project in:
-
-* IntelliJ IDEA
-* Eclipse
-* VS Code
+   * Displays makespan comparison
+   * Shows task allocation
+   * Visualizes results using graph and Gantt chart
 
 ---
 
-## How to Run
+## Genetic Algorithm Workflow
 
-1. Compile the project:
-
-```
-javac src/main/App.java
-```
-
-2. Run the program:
-
-```
-java src.main.App
-```
-
-Note: If using an IDE, simply run `App.java`.
+* Initialize population
+* Evaluate fitness (based on makespan)
+* Selection (tournament method)
+* Crossover
+* Mutation
+* Repeat for multiple generations
+* Select best solution
 
 ---
 
-## Example
+## Execution Steps
+
+### Compile
 
 ```
-Tasks: T1, T2, T3, T4
-VMs: V1, V2, V3
+javac -d out src\main\*.java src\main\gui\*.java src\main\algorithm\*.java src\main\model\*.java src\main\service\*.java src\main\utils\*.java
+```
 
-Best Allocation:
-[1, 2, 1, 3]
+### Run
 
-Makespan: 120
+```
+java -cp out main.App
 ```
 
 ---
 
-## Screenshots
-
-Add your screenshots here after GUI implementation:
+## Example Input
 
 ```
-output.png
-graph.png
+Tasks: 3
+VMs: 2
+Execution Times: 10,20,30
 ```
-
-Example:
-
-* Task allocation view
-* Makespan graph
-* GUI interface
 
 ---
 
-## Future Enhancements
+## Example Output
 
-* GUI using Java Swing or JavaFX
-* Multi-objective optimization (time and cost)
-* Real-time task simulation
-* Comparison with FCFS and Round Robin
+* FCFS Makespan: 60
+* GA Makespan: 50
+* Improvement: 20%
 
 ---
 
-## Applications
+## Advantages
 
-* Cloud computing (AWS, Azure scheduling)
-* Distributed systems
-* Data centers
-* Resource optimization problems
+* Reduces execution time
+* Improves resource utilization
+* Provides visual analysis
+* Scalable approach
+
+---
+
+## Limitations
+
+* Performance depends on GA parameters
+* Not connected to real cloud environment
+* Static input-based simulation
+
+---
+
+## Future Scope
+
+* Integration with real cloud platforms
+* Web-based dashboard
+* AI-based scheduling techniques
+* Database integration
+* Real-time monitoring
 
 ---
 
 ## Author
 
-Sanjay Verma
+Sangam Verma
+B.Tech Computer Science Engineering
 
 ---
 
-## Contribution
+## License
 
-Feel free to fork, improve, and contribute.
+This project is for academic use only.

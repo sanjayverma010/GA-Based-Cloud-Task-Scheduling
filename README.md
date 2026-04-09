@@ -157,4 +157,4 @@ This project is for academic use only.
 
 
 ![final project window](image.png)
-<video controls src="ppt v.mp4" title="project exicution vidio"></video>
+![project UI vidio](pptv-ezgif.com-video-to-gif-converter.gif)

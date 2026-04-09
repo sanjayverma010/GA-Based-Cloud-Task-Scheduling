@@ -19,9 +19,9 @@ public class GeneticAlgorithm {
     public Chromosome run(Task[] tasks, int vmCount) {
         Chromosome[] population = new Chromosome[popSize];
         for (int i = 0; i < popSize; i++) {
-            population[i] = new Chromosome(tasks.length, vmCount);
+            population[i] = new Chromosome(tasks.length, vmCount); // Random task allocation
         }
-
+      // Fitness Evaluation
         evaluatePopulation(population, tasks, vmCount);
         Chromosome elite = Selection.selectBest(population);
         history.clear();

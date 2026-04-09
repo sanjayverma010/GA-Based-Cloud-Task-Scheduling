@@ -158,5 +158,4 @@ This project is for academic use only.
 
 ![final project window](image.png)
 
-
-<video controls src="exicution-vidio.mp4" title="Title"></video>
+![project GUI](exicution-vidio-ezgif.com-video-to-gif-converter.gif)
